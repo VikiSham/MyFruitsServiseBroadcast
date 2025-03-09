@@ -23,24 +23,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button bSimple, bCustom, bRecycler;
     Intent musicIntent;
     MyCallReceiver phoneReceiver;
-    /*BroadcastReceiver phoneReceiver = new BroadcastReceiver()
-    {
-        @Override
-        public void onReceive(Context context, Intent intent)
-        {
-            String state = intent.getStringExtra(TelephonyManager.EXTRA_STATE);
-            // מצב שיחה נכנסת טלפון מצלצל או יש שיחה פעילה
-            if (state.equals(TelephonyManager.EXTRA_STATE_RINGING) ||
-                    state.equals(TelephonyManager.EXTRA_STATE_OFFHOOK))
-            {
-                stopService(musicIntent);
-            }
-            if (state.equals(TelephonyManager.CALL_STATE_IDLE)) //  מצב של שיחה שאינה פעילה
-            {
-                startService(musicIntent);
-            }
-        }
-    };*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     @Override
     protected void onDestroy() {
-        //stopService(musicIntent);
         unregisterReceiver(phoneReceiver);
         super.onDestroy();
     }
