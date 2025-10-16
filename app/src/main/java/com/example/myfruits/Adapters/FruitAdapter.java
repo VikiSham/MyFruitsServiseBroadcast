@@ -1,4 +1,4 @@
-package com.example.myfruits;
+package com.example.myfruits.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,8 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myfruits.Models.Fruit;
+import com.example.myfruits.R;
+
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class FruitAdapter extends ArrayAdapter {

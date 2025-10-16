@@ -1,8 +1,7 @@
-package com.example.myfruits;
+package com.example.myfruits.Adapters;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +13,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.json.JSONArray;
+import com.example.myfruits.Models.Fruit;
+import com.example.myfruits.R;
 
-import java.io.ObjectInputStream;
 import java.util.ArrayList;
-import java.util.List;
 
 public class RecyclerCustomAdapter extends RecyclerView.Adapter<RecyclerCustomAdapter.ViewHolder> {
 

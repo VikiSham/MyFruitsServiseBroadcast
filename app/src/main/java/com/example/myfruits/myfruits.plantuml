@@ -3,7 +3,7 @@
 title __MYFRUITS's Class Diagram__\n
 
   namespace com.example.myfruits {
-    class com.example.myfruits.CustomDesignList {
+    class com.example.myfruits.Activities.CustomDesignList {
         ~ arrCounter : int[]
         ~ fruitNames : String[]
         ~ imageResourceArray : int[]
@@ -18,7 +18,7 @@ title __MYFRUITS's Class Diagram__\n
   
 
   namespace com.example.myfruits {
-    class com.example.myfruits.Fruit {
+    class com.example.myfruits.Models.Fruit {
         - color : int
         - fruitImageId : int
         - fruitName : String
@@ -38,7 +38,7 @@ title __MYFRUITS's Class Diagram__\n
   
 
   namespace com.example.myfruits {
-    class com.example.myfruits.FruitAdapter {
+    class com.example.myfruits.Adapters.FruitAdapter {
         - context : Context
         - layout : int
         - list : ArrayList<Fruit>
@@ -49,7 +49,7 @@ title __MYFRUITS's Class Diagram__\n
   
 
   namespace com.example.myfruits {
-    class com.example.myfruits.MainActivity {
+    class com.example.myfruits.Activities.MainActivity {
         ~ bCustom : Button
         ~ bSimple : Button
         + onClick()
@@ -61,7 +61,7 @@ title __MYFRUITS's Class Diagram__\n
   
 
   namespace com.example.myfruits {
-    class com.example.myfruits.SimpleDesignList {
+    class com.example.myfruits.Activities.SimpleDesignList {
         ~ adapter : ArrayAdapter<String>
         ~ fruitNames : String[]
         ~ lvSimple : ListView
@@ -72,12 +72,12 @@ title __MYFRUITS's Class Diagram__\n
   }
   
 
-  com.example.myfruits.CustomDesignList -up-|> androidx.appcompat.app.AppCompatActivity
-  com.example.myfruits.CustomDesignList o-- com.example.myfruits.FruitAdapter : adapter
-  com.example.myfruits.FruitAdapter -up-|> android.widget.ArrayAdapter
-  com.example.myfruits.MainActivity .up.|> android.view.View.OnClickListener
-  com.example.myfruits.MainActivity -up-|> androidx.appcompat.app.AppCompatActivity
-  com.example.myfruits.SimpleDesignList -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.myfruits.Activities.CustomDesignList -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.myfruits.Activities.CustomDesignList o-- com.example.myfruits.Adapters.FruitAdapter : adapter
+  com.example.myfruits.Adapters.FruitAdapter -up-|> android.widget.ArrayAdapter
+  com.example.myfruits.Activities.MainActivity .up.|> android.view.View.OnClickListener
+  com.example.myfruits.Activities.MainActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.myfruits.Activities.SimpleDesignList -up-|> androidx.appcompat.app.AppCompatActivity
 
 
 right footer

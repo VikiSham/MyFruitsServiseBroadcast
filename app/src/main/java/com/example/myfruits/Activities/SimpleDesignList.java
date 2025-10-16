@@ -1,4 +1,4 @@
-package com.example.myfruits;
+package com.example.myfruits.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +10,9 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class SimpleDesignList extends AppCompatActivity {
+import com.example.myfruits.R;
+
+public class SimpleDesignList extends MyMenu {
     ListView lvSimple;
     ArrayAdapter<String>adapter;
     String[] fruitNames= { "apple", "apricot", "banana", "cherry", "coconut", "grapes", "kiwi", "mango",
@@ -38,9 +40,6 @@ public class SimpleDesignList extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int itemID=item.getItemId();
 
-        if(itemID==R.id.back){
-            finish();
-        }
 
         if(itemID==1)
         {

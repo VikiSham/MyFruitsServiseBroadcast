@@ -1,12 +1,10 @@
-package com.example.myfruits;
+package com.example.myfruits.Activities;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +12,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.myfruits.Adapters.FruitAdapter;
+import com.example.myfruits.Models.Fruit;
+import com.example.myfruits.R;
 
 import java.util.ArrayList;
 

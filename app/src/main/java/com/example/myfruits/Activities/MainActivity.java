@@ -1,4 +1,4 @@
-package com.example.myfruits;
+package com.example.myfruits.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,8 +6,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
@@ -18,11 +16,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import com.example.myfruits.Models.MyCallReceiver;
+import com.example.myfruits.Models.MyServiceMusic;
+import com.example.myfruits.R;
+
+public class MainActivity extends MyMenu implements View.OnClickListener {
 
     Button bSimple, bCustom, bRecycler;
-    Intent musicIntent;
-    MyCallReceiver phoneReceiver;
+      MyCallReceiver phoneReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bRecycler.setOnClickListener(this);
 
         phoneReceiver=new MyCallReceiver();
-        musicIntent = new Intent(this, MyServiceMusic.class);
         registerReceiver(phoneReceiver,
                 new IntentFilter(TelephonyManager.ACTION_PHONE_STATE_CHANGED));
     }
@@ -49,27 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onDestroy();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-            getMenuInflater().inflate(R.menu.menu_main,menu);
-            return true;
-        }
 
-        @Override
-        public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-            int itemID=item.getItemId();
-
-            if(itemID==R.id.back){
-                finish();
-            }
-            if(itemID==R.id.on){
-                startService(musicIntent);
-            }
-            if(itemID==R.id.off){
-                stopService(musicIntent);
-            }
-            return super.onOptionsItemSelected(item);
-        }
 
     @Override
     public void onClick(View v) {

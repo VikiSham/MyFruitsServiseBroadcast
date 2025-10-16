@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SimpleDesignList">
+    tools:context=".Activities.SimpleDesignList">
 
     <ListView
         android:id="@+id/lvSimple"

@@ -1,4 +1,4 @@
-package com.example.myfruits;
+package com.example.myfruits.Models;
 
 import android.graphics.Color;
 

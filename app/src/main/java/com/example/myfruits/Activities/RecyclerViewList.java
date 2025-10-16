@@ -1,18 +1,21 @@
-package com.example.myfruits;
+package com.example.myfruits.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.myfruits.Adapters.RecyclerCustomAdapter;
+import com.example.myfruits.Models.Fruit;
+import com.example.myfruits.Models.RecyclerItemClickListener;
+import com.example.myfruits.R;
 
 import java.util.ArrayList;
 
-public class RecyclerViewList extends AppCompatActivity {
+public class RecyclerViewList extends MyMenu {
 
     RecyclerView recyclerView;
     ArrayList<Fruit> list;
@@ -47,9 +50,9 @@ public class RecyclerViewList extends AppCompatActivity {
         // vertical list
         //recyclerView.setLayoutManager(new LinearLayoutManager(this));
         // table list, number of colomns
-        recyclerView.setLayoutManager(new GridLayoutManager(this,2));// number of colomns
+        //recyclerView.setLayoutManager(new GridLayoutManager(this,2));// number of colomns
         // horizontal list
-        //recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
 
         ItemClickListener itemClickListener = new ItemClickListener();

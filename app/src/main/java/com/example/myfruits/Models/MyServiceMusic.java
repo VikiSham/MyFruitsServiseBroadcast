@@ -1,9 +1,11 @@
-package com.example.myfruits;
+package com.example.myfruits.Models;
 
 import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
+
+import com.example.myfruits.R;
 
 public class MyServiceMusic extends Service {
     private MediaPlayer player;
@@ -20,7 +22,7 @@ public class MyServiceMusic extends Service {
     public void onCreate()
     {
         super.onCreate();
-        player=MediaPlayer.create(this,R.raw.waterswamp);
+        player=MediaPlayer.create(this, R.raw.waterswamp);
         player.setLooping(true);
         player.setVolume(1.0f,1.0f);
     }

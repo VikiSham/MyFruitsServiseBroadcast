@@ -10,28 +10,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFruits">
+        <activity
+            android:name=".Activities.MyMenu"
+            android:exported="false" />
 
-        <receiver android:name=".MyCallReceiver"
+        <receiver
+            android:name=".Models.MyCallReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.PHONE_STATE"/>
+                <action android:name="android.intent.action.PHONE_STATE" />
             </intent-filter>
         </receiver>
 
-
         <service
-            android:name=".MyServiceMusic"
+            android:name=".Models.MyServiceMusic"
             android:enabled="true"
             android:exported="true"
-            android:foregroundServiceType="mediaPlayback"/>
+            android:foregroundServiceType="mediaPlayback" />
 
         <activity
-            android:name=".RecyclerViewList"
+            android:name=".Activities.RecyclerViewList"
             android:exported="false" />
-        <activity android:name=".CustomDesignList" />
-        <activity android:name=".SimpleDesignList" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activities.CustomDesignList" />
+        <activity android:name=".Activities.SimpleDesignList" />
+
+        <activity android:name=".Activities.MainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
