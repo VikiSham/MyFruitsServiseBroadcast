@@ -7,7 +7,6 @@ import android.telephony.TelephonyManager;
 import android.widget.Toast;
 
 public class MyCallReceiver extends BroadcastReceiver {
-
     @Override
     public void onReceive(Context context, Intent intent) {
         String state = intent.getStringExtra(TelephonyManager.EXTRA_STATE);
